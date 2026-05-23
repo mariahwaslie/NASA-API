@@ -1,10 +1,15 @@
 import requests
 import streamlit as st
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
+
+import os
+
+load_dotenv() 
 
 date = st.date_input('put a date here')
 
-
+API = os.getenv("API")
 
 def nasa_image():
     URL = f"https://api.nasa.gov/planetary/apod?api_key={API}&date={date}"
